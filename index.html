@@ -1,46 +1,198 @@
-export default function GraduationGreeting() { return ( <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 text-white flex items-center justify-center p-6 overflow-hidden"> <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),_transparent_40%)]"></div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graduation Greeting</title>
 
-<div className="relative max-w-3xl w-full rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl p-8 md:p-14 text-center">
-    <div className="mb-6">
-      <p className="tracking-[0.35em] uppercase text-blue-200 text-sm">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes float {
+      0%,100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%,100% {
+        opacity: .5;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes sparkle {
+      0%,100% {
+        opacity: .3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.4);
+      }
+    }
+
+    body {
+      overflow: hidden;
+      background: #020617;
+    }
+
+    .card {
+      animation: fadeUp 1.5s ease;
+      backdrop-filter: blur(20px);
+    }
+
+    .float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .glow {
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    .sparkle {
+      animation: sparkle 2s infinite;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-6 relative text-white">
+
+  <!-- Background Gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900"></div>
+
+  <!-- Blur Glow -->
+  <div class="absolute top-[-120px] left-[-100px] w-[350px] h-[350px] rounded-full bg-blue-500/30 blur-3xl glow"></div>
+
+  <div class="absolute bottom-[-140px] right-[-100px] w-[320px] h-[320px] rounded-full bg-pink-500/20 blur-3xl glow"></div>
+
+  <!-- Floating Decorations -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+
+    <div class="absolute top-[12%] left-[10%] text-pink-300 text-4xl sparkle">
+      ✦
+    </div>
+
+    <div class="absolute top-[20%] right-[12%] text-pink-200 text-3xl float">
+      ♡
+    </div>
+
+    <div class="absolute bottom-[18%] left-[16%] text-blue-200 text-2xl sparkle">
+      ✨
+    </div>
+
+    <div class="absolute bottom-[14%] right-[20%] text-pink-300 text-5xl float">
+      ♡
+    </div>
+
+  </div>
+
+  <!-- Main Card -->
+  <div class="relative max-w-3xl w-full rounded-[40px] border border-white/10 bg-white/5 shadow-[0_0_80px_rgba(59,130,246,0.25)] p-10 md:p-16 text-center card">
+
+    <!-- Top Label -->
+    <div class="mb-6">
+      <p class="uppercase tracking-[0.5em] text-blue-200 text-sm">
         Graduation Day
       </p>
     </div>
 
-    <h1 className="text-4xl md:text-6xl font-serif leading-tight text-white drop-shadow-lg">
+    <!-- Name -->
+    <h1 class="text-5xl md:text-7xl font-serif text-white leading-tight float drop-shadow-2xl">
       Aryana Zahra
     </h1>
 
-    <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-blue-300 to-transparent mx-auto my-8"></div>
+    <!-- Divider -->
+    <div class="flex items-center justify-center gap-4 my-10">
+      <div class="w-16 h-[1px] bg-gradient-to-r from-transparent to-blue-300"></div>
 
-    <p className="text-lg md:text-xl leading-relaxed text-slate-200 font-light">
-      Selamat atas kelulusanmu ✨
-      <br />
-      Hari ini bukan hanya tentang toga dan gelar,
-      tetapi tentang perjalanan panjang,
-      doa-doa yang tidak pernah berhenti,
-      dan kerja keras yang akhirnya berbuah indah.
+      <div class="text-pink-200 text-xl sparkle">
+        ✨
+      </div>
+
+      <div class="w-16 h-[1px] bg-gradient-to-l from-transparent to-blue-300"></div>
+    </div>
+
+    <!-- Main Message -->
+    <p class="text-lg md:text-2xl leading-relaxed text-slate-200 font-light">
+      Selamat atas kelulusanmu 🤍
+      <br><br>
+
+      Hari ini bukan hanya tentang toga,
+      gelar, atau foto-foto indah.
+      <br>
+
+      Tapi tentang semua air mata,
+      rasa lelah, doa yang tidak pernah berhenti,
+      dan perjuangan panjang
+      yang akhirnya sampai di titik ini.
     </p>
 
-    <p className="mt-8 text-base md:text-lg text-slate-300 leading-relaxed">
-      Semoga langkahmu setelah ini dipenuhi
-      kebahagiaan, kesuksesan, dan orang-orang baik
-      yang selalu mendukungmu.
-      <br />
-      Tetaplah menjadi pribadi yang elegan,
-      hangat, dan bersinar seperti sekarang.
-    </p>
+    <!-- Romantic Message -->
+    <div class="mt-10 text-slate-300 text-base md:text-xl leading-relaxed">
 
-    <div className="mt-12 flex items-center justify-center gap-3 text-blue-200 text-sm tracking-[0.3em] uppercase">
-      <span className="w-10 h-[1px] bg-blue-300"></span>
+      Aku bangga sekali melihatmu tumbuh
+      sejauh ini.
+      <br><br>
+
+      Senyummu hari ini benar-benar cantik,
+      bukan hanya karena kelulusanmu,
+      tapi karena kamu berhasil
+      melewati semuanya.
+      <br><br>
+
+      Semoga setelah ini,
+      hidupmu dipenuhi kebahagiaan,
+      orang-orang baik,
+      dan cinta yang selalu menjagamu 🤍
+
+    </div>
+
+    <!-- Quote -->
+    <div class="mt-12 px-6 py-5 rounded-2xl bg-white/5 border border-white/10 text-pink-100 italic text-lg leading-relaxed shadow-lg">
+
+      “Aku mungkin tidak ikut begadang
+      mengerjakan tugasmu,
+      tapi aku akan selalu ikut
+      mendoakan masa depanmu.”
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-12 flex items-center justify-center gap-4 uppercase tracking-[0.4em] text-blue-200 text-sm">
+
+      <span class="w-12 h-[1px] bg-blue-300"></span>
+
       Proud Of You
-      <span className="w-10 h-[1px] bg-blue-300"></span>
+
+      <span class="w-12 h-[1px] bg-blue-300"></span>
+
     </div>
 
-    <div className="mt-10 text-slate-400 italic text-sm">
-      “Every achievement begins with courage and persistence.”
+    <!-- Signature -->
+    <div class="mt-10 text-slate-400 italic text-sm">
+      with love, always ✨
     </div>
+
   </div>
-</div>
 
-) }
+</body>
+</html>
